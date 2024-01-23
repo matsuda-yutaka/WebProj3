@@ -8,7 +8,7 @@ public class DBConnector {
 	/**
 	 * JDBC ドライバー名
 	 */
-	private static String drivetName = "com.mysql.jdbc.Driver";
+	private static String driverName = "com.mysql.jdbc.Driver";
 	/**
 	 * データベース接続 URL
 	 */
@@ -20,7 +20,7 @@ public class DBConnector {
 	/*
 	 * データベース接続パスワード
 	 */
-	private static String password = "mysql";
+	private static String password = "root";
 
 	public Connection getConnection() {
 		Connection con = null;

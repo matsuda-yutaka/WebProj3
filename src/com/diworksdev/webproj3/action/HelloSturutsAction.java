@@ -10,7 +10,7 @@ public class HelloSturutsAction extends ActionSupport {
 	
 	public String execute() {
 		String ret = ERROR;
-		HelloStrutsDAO dao = new HelloSyrutsDAO();
+		HelloStrutsDAO dao = new HelloStrutsDAO();
 		HelloStrutsDTO dto = new HelloStrutsDTO();
 		
 		dto=dao.select();

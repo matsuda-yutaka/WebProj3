@@ -4,11 +4,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title>HelloStrutsERROR</title>
+		<meta charset="utf-8">
+		<title>HelloStruts</title>
 	</head>
 	<body>
-		<h1>エラーが発生しました</h1>
+		<h1>HelloStruts2!</h1>
 		<br>
 		<h3><s:property value="result"/></h3>
 	</body>
