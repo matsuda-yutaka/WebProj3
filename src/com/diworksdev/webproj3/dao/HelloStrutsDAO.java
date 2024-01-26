@@ -6,18 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.diworksdev.webproj3.dto.HelloStrutsDTO;
-import com.diworksdev.webproj3.util.DBConnector;
+import com.diworksdev.webproj3.util.DBConnnector;
 
 public class HelloStrutsDAO {
 	
 	public HelloStrutsDTO select() {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
-		HelloStrutsDTO dto = new HelloStrutsDTO();
+		HelloStrutsDTO dto=new HelloStrutsDTO();
 		
 		String sql = "select * from users";
 		try {
-			PreparedStatement ps = con.prepareStatement(sql):
+			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {
@@ -25,7 +25,7 @@ public class HelloStrutsDAO {
 			} else {
 				dto.setResult("MySQLと接続できません。");
 			}
-		}　catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		try {
