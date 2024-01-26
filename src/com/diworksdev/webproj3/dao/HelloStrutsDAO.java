@@ -1,38 +1,37 @@
-package com.diworksdev.webproj3.dao;
+package com.diworksdev.webproj3.action;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
+import com.diworksdev.webproj3.dao.HelloStrutsDAO;
 import com.diworksdev.webproj3.dto.HelloStrutsDTO;
-import com.diworksdev.webproj3.util.DBConnnector;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class HelloStrutsDAO {
+public class HelloStrutsAction extends ActionSupport {
 	
-	public HelloStrutsDTO select() {
-		DBConnector db = new DBConnector();
-		Connection con = db.getConnection();
-		HelloStrutsDTO dto=new HelloStrutsDTO();
+	private String result;
+	
+	public String execute() {
+		String ret = ERROR;
+		HelloStrutsDAO dao = new HelloStrutsDAO();
+		HelloStrutsDTO dto = new HelloStrutsDTO();
 		
-		String sql = "select * from users";
-		try {
-			PreparedStatement ps = con.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-			
-			if(rs.next()) {
-				dto.setResult("MySQLと接続できます。");
-			} else {
-				dto.setResult("MySQLと接続できません。");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		dto = dao.select();
+		
+		System.out.println(dto.getResult());
+		
+		result = dto.getResult();
+		
+		if(result.equals("MySQLと接続できます。")) {
+			ret = SUCCESS;
+		} else {
+			ret = ERROR;
 		}
-		try {
-			con.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return dto;
+		return ret;
+	}
+	
+	public String getResult() {
+		return result;
+	}
+	
+	public void setResult(String result) {
+		this.result = result;
 	}
 }
