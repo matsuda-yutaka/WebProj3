@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.diworksdev.webproj3.dto.HelloStrutsDTO;
-import com.diworksdev.webproj3.util.DBConnnector;
+import com.diworksdev.webproj3.util.DBConnector;
 
 public class HelloStrutsDAO {
 	

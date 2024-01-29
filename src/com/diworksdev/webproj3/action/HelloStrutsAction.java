@@ -4,14 +4,14 @@ import com.diworksdev.webproj3.dao.HelloStrutsDAO;
 import com.diworksdev.webproj3.dto.HelloStrutsDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class HelloSturutsAction extends ActionSupport {
+public class HelloStrutsAction extends ActionSupport {
 	
-	privata String result;
+	private String result;
 	
 	public String execute() {
-		String ret = ERROR;
-		HelloStrutsDAO dao = new HelloStrutsDAO();
-		HelloStrutsDTO dto = new HelloStrutsDTO();
+		String ret=ERROR;
+		HelloStrutsDAO dao=new HelloStrutsDAO();
+		HelloStrutsDTO dto=new HelloStrutsDTO();
 		
 		dto=dao.select();
 		
@@ -32,6 +32,6 @@ public class HelloSturutsAction extends ActionSupport {
 	}
 	
 	public void setResult(String result) {
-		this.result = result;
+		this.result=result;
 	}
 }
