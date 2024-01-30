@@ -12,7 +12,7 @@ public class DBConnector {
 	/**
 	 * データベース接続　URL
 	 */
-	private static String url = "jdbc:mysql://localhost/testdb?enabledTLSProtocols=TLSv1.2"
+	private static String url = "jdbc:mysql://localhost/testdb?enabledTLSProtocols=TLSv1.2";
 	/**
 	 * データベース接続ユーザー名
 	 */
